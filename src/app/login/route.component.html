@@ -1,0 +1,19 @@
+<main>
+  <div class="login">
+    <form class="example-form" [formGroup]="loginForm">
+      <img src="assets/blue-volks.png" alt="Example Image" class="image" />
+      <div class="text">Faça login na sua conta</div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Usuário</mat-label>
+        <input matInput formControlName="usuario" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Senha</mat-label>
+        <input type="password" matInput formControlName="senha" />
+      </mat-form-field>
+    </form>
+
+    <button (click)="navigateToAbout()" mat-raised-button>Entrar</button>
+  </div>
+</main>

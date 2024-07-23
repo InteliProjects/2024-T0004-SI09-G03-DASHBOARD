@@ -1,0 +1,71 @@
+<section class="content">
+  <!-- <mat-tab-group> -->
+  <!-- <mat-tab label="Geral"> -->
+  <div class="row-top">
+    <div>
+      <h1 id="h1">Visão geral</h1>
+      <h2 class="title-main">
+        Visualize abaixo informações sobre a Volkswagen em geral.
+      </h2>
+    </div>
+    <div>
+    <div id="div-top">
+      <i class="fas fa-calendar" id="small"></i> Dados de 2023
+    </div>
+  </div>
+  </div>
+
+  <div class="row-top">
+    <table class="card-small">
+      <div class="card-title">Satisfação GPTW</div>
+      <div class="little-row">
+        <div class="circle"><i class="fas fa-chart-bar"></i></div>
+        <div class="card-nota-small">{{ satisfacaoGPTW }}%</div>
+      </div>
+    </table>
+    <table class="card-small">
+      <div class="card-title">Engajamento GPTW</div>
+      <div class="little-row">
+        <div class="circle"><i class="fas fa-chart-bar"></i></div>
+        <div class="card-nota-small">{{ engageGPTW }}%</div>
+      </div>
+    </table>
+    <table class="card-small">
+      <div class="card-title">Satisfação STIBA</div>
+      <div class="little-row">
+        <div class="circle"><i class="fas fa-chart-bar" id="cool"></i></div>
+        <div class="card-nota-small">{{ satisfacaoStiba }}%</div>
+      </div>
+    </table>
+    <table class="card-small">
+      <div class="card-title">Engajamento STIBA</div>
+      <div class="little-row">
+        <div class="circle"><i class="fas fa-chart-bar" id="cool"></i></div>
+        <div class="card-nota-small">{{ engageStiba }}%</div>
+      </div>
+    </table>
+  </div>
+  <div class="card-full">
+    <div class="card-header">
+      Incidência mensal dos Top 3 motivos de atestado por saúde mental
+    </div>
+    <apx-chart
+      [series]="chartOptions.series!"
+      [chart]="chartOptions.chart!"
+      [xaxis]="chartOptions.xaxis!"
+      [dataLabels]="chartOptions.dataLabels!"
+      [grid]="chartOptions.grid!"
+      [stroke]="chartOptions.stroke!"
+      [title]="chartOptions.title!"
+    ></apx-chart>
+  </div>
+
+  <!-- </mat-tab>  -->
+
+  <!-- <mat-tab label="Plantas">
+      <h2 class="title-main">
+        Visualize abaixo comparações entre plantas da Volkswagen.
+      </h2></mat-tab
+    > -->
+  <!-- </mat-tab-group> -->
+</section>

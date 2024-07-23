@@ -1,0 +1,98 @@
+<!-- <mat-drawer-content class="mat-drawer-content" style="margin-left: 0"> -->
+<section class="content">
+  <div class="left-content">
+    <div class="activities">
+      <div class="row-top">
+        <div>
+          <h1 id="h1">Visão por planta</h1>
+          <h2 class="title-main">Selecione a planta que deseja visualizar.</h2>
+        </div>
+        <div>
+          <!-- <button mat-raised-button (click)="drawer.toggle()">Filtros</button> -->
+          <div id="div-top">
+            <i class="fas fa-calendar" id="small"></i> Dados de 2023
+          </div>
+        </div>
+      </div>
+
+      <!-- TO-DO Adcionar filtros -->
+      <!-- <mat-drawer class="drawer" #drawer>
+          <div class="row-gap">
+            <div class="nav-title">Filtros</div>
+            <button mat-icon-button (click)="drawer.toggle()">X</button>
+          </div>
+          <mat-accordion>
+            <mat-expansion-panel hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title> This is the expansion title </mat-panel-title>
+                <mat-panel-description>
+                  This is a summary of the content
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <p>This is the primary content of the panel.</p>
+            </mat-expansion-panel>
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title> Self aware panel </mat-panel-title>
+                <mat-panel-description>
+                  Currently I am {{ panelOpenState ? "open" : "closed" }}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <p>I'm visible because I am open</p>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-drawer> -->
+
+      <mat-form-field id="mat-form-field">
+        <mat-select [(value)]="selected">
+          @for (food of foods; track food) {
+          <mat-option [value]="food.value" (click)="setSelected()">{{
+            food.viewValue
+          }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <div class="row-top" id="main-content">
+        <div class="snowbunny">
+          <div class="card-full-small">
+            <div class="card-header-left">Total de atestados</div>
+            <div class="row" id="left">
+              <div class="circle"><i class="fas fa-file" id="aaa"></i></div>
+              <div class="card-nota">{{ totalAtestados }}</div>
+            </div>
+          </div>
+          <div class="card-full-small">
+            <div class="card-header-left">Total de dias abonados</div>
+            <div class="row" id="left">
+              <div class="circle"><i class="fas fa-calendar"></i></div>
+              <div class="card-nota">{{ totalDias }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="card-full">
+          <div class="card-header">
+            Incidência mensal dos Top 3 motivos de atestado por saúde mental
+          </div>
+          <div>
+            <apx-chart
+              [series]="chartOptions.series!"
+              [chart]="chartOptions.chart!"
+              [xaxis]="chartOptions.xaxis!"
+              [dataLabels]="chartOptions.dataLabels!"
+              [grid]="chartOptions.grid!"
+              [stroke]="chartOptions.stroke!"
+              [title]="chartOptions.title!"
+            ></apx-chart>
+          </div>
+        </div>
+      </div>
+
+      <router-outlet />
+    </div>
+  </div>
+</section>
+<!-- </mat-drawer-content> -->

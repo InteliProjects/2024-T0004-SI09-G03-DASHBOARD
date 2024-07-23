@@ -1,0 +1,19 @@
+<section class="content">
+  <div class="left-content">
+    <div class="activities">
+      <h1>Visão</h1>
+      <mat-form-field>
+        <mat-select [(value)]="selected">
+          @for (food of foods; track food) {
+          <mat-option [value]="food.value" (click)="setSelected()">{{
+            food.viewValue
+          }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <router-outlet />
+
+    </div>
+  </div>
+</section>
